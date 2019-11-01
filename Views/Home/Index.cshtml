@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Gerenciador de tarefas</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Organize suas tarefas</h2>
+        <p> No link abaixo, crie uma nova tarefa</p>
+        @Html.ActionLink("Criar tarefa!", "Index", "Tarefa")
+    </div>
+    <div class="col-md-4">
+        <h2>
+
+            @{
+                var helper = new PIM_VIII.Helper();
+                WriteLiteral($"{helper.OverdueTotal()} tarefa(s) vencida(s)");
+
+            }
+        </h2>
+        @Html.ActionLink("Ver tarefas vencidas", "Overdue", "Tarefa")
+
+    </div>
+</div>
