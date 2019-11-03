@@ -18,7 +18,7 @@ namespace PIM_VIII.Models
 
         [Display(Name = "Data Entrega")]
         [DataType(DataType.Date)]
-        public DateTime Vencimento{ get; set; }
+        public DateTime Vencimento { get; set; }
     }
 
     public class TarefaDBContext : DbContext
